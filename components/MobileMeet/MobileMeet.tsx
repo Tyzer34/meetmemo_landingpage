@@ -1,5 +1,6 @@
 import React from "react";
 import Testimonials from "../Testimonials/Testimonials";
+import Image from "next/image";
 
 export default function MobileMeet() {
   return (
@@ -36,16 +37,16 @@ export default function MobileMeet() {
               {/* App Store Icons */}
               <div className="flex flex-row space-x-4 justify-center py-5">
                 <div>
-                  <img src="/googleplay.svg" alt="Google Play" className="w-28 sm:w-32" />
+                  <Image src="/googleplay.svg" alt="Google Play" width={128} height={40} className="w-28 sm:w-32" />
                 </div>
                 <div>
-                  <img src="/applestore.svg" alt="App Store" className="w-28 sm:w-32" />
+                  <Image src="/applestore.svg" alt="App Store" width={128} height={40} className="w-28 sm:w-32" />
                 </div>
               </div>
             </div>
             {/* Phone Image at the Bottom */}
             <div className="flex justify-center items-center mt-auto">
-              <img src="/iPhone 15-trimmed 1.svg" alt="Mobile" className="w-44 sm:w-56" />
+              <Image src="/iPhone 15-trimmed 1.svg" alt="Mobile" width={224} height={400} className="w-44 sm:w-56" />
             </div>
           </div>
 

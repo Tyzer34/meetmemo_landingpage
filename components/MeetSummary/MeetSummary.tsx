@@ -1,5 +1,6 @@
 import React from "react";
 import Productivity from "../Productivity/Productivity";
+import Image from "next/image";
 
 export default function MeetingAutomationSection() {
   return (
@@ -34,9 +35,9 @@ export default function MeetingAutomationSection() {
           <div className="relative bg-[#F1E8FE] p-3 sm:p-5 md:p-6 lg:p-8 rounded-2xl shadow-lg max-w-sm w-full mx-auto">
             
             <div className="flex flex-wrap justify-center md:justify-center space-x-2 sm:space-x-3 md:space-x-3 lg:space-x-4 mt-3 sm:mt-6 md:mt-8 lg:mt-10 mb-3 sm:mb-5 md:mb-6 lg:mb-8">
-              <img src="/meet.svg" alt="meets" className="w-8 sm:w-12 md:w-14 lg:w-16 h-8 sm:h-12 md:h-14 lg:h-16 object-cover" />
-              <img src="/Frame 17.svg" alt="meets" className="w-8 sm:w-12 md:w-14 lg:w-16 h-8 sm:h-12 md:h-14 lg:h-16 object-cover" />
-              <img src="/Frame 16.svg" alt="meets" className="w-8 sm:w-12 md:w-14 lg:w-16 h-8 sm:h-12 md:h-14 lg:h-16 object-cover" />
+              <Image src="/meet.svg" alt="meets" width={64} height={64} className="w-8 sm:w-12 md:w-14 lg:w-16 h-8 sm:h-12 md:h-14 lg:h-16 object-cover" />
+              <Image src="/Frame 17.svg" alt="meets" width={64} height={64} className="w-8 sm:w-12 md:w-14 lg:w-16 h-8 sm:h-12 md:h-14 lg:h-16 object-cover" />
+              <Image src="/Frame 16.svg" alt="meets" width={64} height={64} className="w-8 sm:w-12 md:w-14 lg:w-16 h-8 sm:h-12 md:h-14 lg:h-16 object-cover" />
             </div>
 
            

@@ -1,5 +1,6 @@
 import React from "react";
 import MeetSummary from "../MeetSummary/MeetSummary";
+import Image from "next/image";
 
 export default function ItWork() {
   return (
@@ -16,23 +17,29 @@ export default function ItWork() {
         <div className="rounded-2xl overflow-hidden shadow-lg p-5 sm:p-6 bg-[#F1E8FE] border border-[#E3D8FE]">
           <div className="flex items-center justify-between">
             
-            <img
+            <Image
               src="/photo.svg"
               alt="img"
+              width={160}
+              height={120}
               className="w-40 sm:w-50 rounded-lg shadow-md max-w-full"
             />
 
             
             <div className="relative flex flex-col items-center">
-              <img
+              <Image
                 src="/3images.svg"
                 alt="3_images"
+                width={56}
+                height={56}
                 className="w-12 sm:w-14 rounded-full shadow-sm max-w-full"
               />
               <div className="absolute left-1/2 transform -translate-x-1/2 -top-3 sm:-top-5">
-                <img
+                <Image
                   src="/arrowimg.svg"
                   alt="arrow"
+                  width={32}
+                  height={32}
                   className="w-6 sm:w-8 max-w-full"
                 />
               </div>
@@ -55,7 +62,7 @@ export default function ItWork() {
        
         <div className="bg-[#E2F4E5] p-5 sm:p-6 rounded-2xl shadow-lg border border-[#CDEBCE]">
           <div className="flex items-center mb-4 space-x-3 sm:space-x-4">
-            <img src="/designmeet.svg" alt="designmeet" className="w-14 sm:w-24 rounded-md max-w-full" />
+            <Image src="/designmeet.svg" alt="designmeet" width={96} height={72} className="w-14 sm:w-24 rounded-md max-w-full" />
             <h4 className="text-lg sm:text-xl font-semibold text-[#61A461]">Design Meeting</h4>
           </div>
           <div className="relative mb-4 p-3 bg-white border-b-4 sm:border-b-8 border-r-4 sm:border-r-8 rounded-xl shadow-sm border-[#BFECBF]">
@@ -86,7 +93,7 @@ export default function ItWork() {
                 <p className="text-sm sm:text-base text-[#161727]">Development Meeting</p>
               </div>
             </div>
-            <img src="/4group.svg" alt="4_img" className="w-20 sm:w-32 h-20 sm:h-32 mt-3 sm:mt-0 max-w-full" />
+            <Image src="/4group.svg" alt="4_img" width={128} height={128} className="w-20 sm:w-32 h-20 sm:h-32 mt-3 sm:mt-0 max-w-full" />
           </div>
           <h3 className="text-lg sm:text-xl font-semibold text-[#162132] mt-6">
             Organize & Share with Spaces

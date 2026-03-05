@@ -1,5 +1,6 @@
 import React from "react";
 import MeetTools from "../MeetTools/MeetTools";
+import Image from "next/image";
 
 export default function Productivity() {
   return (
@@ -17,9 +18,11 @@ export default function Productivity() {
                   <p className="text-[#0E2332] text-base sm:text-lg md:text-xl font-bold">Design 2.0 Meeting</p>
                   <p className="text-sm sm:text-md md:text-lg text-[#3C813C]">Today</p>
                 </div>
-                <img
+                <Image
                   src="/people.svg"
                   alt="people Icon"
+                  width={96}
+                  height={72}
                   className="w-14 sm:w-18 md:w-20 lg:w-24 h-auto object-cover"
                 />
               </div>
@@ -29,9 +32,11 @@ export default function Productivity() {
                   <p className="text-[#161727] text-base sm:text-lg md:text-xl font-bold">SEO Campaign Launch</p>
                   <p className="text-sm sm:text-md md:text-lg text-[#3C813C]">Yesterday</p>
                 </div>
-                <img
+                <Image
                   src="/2people.svg"
                   alt="2peoples"
+                  width={96}
+                  height={72}
                   className="w-14 sm:w-18 md:w-20 lg:w-24 h-auto object-cover"
                 />
               </div>

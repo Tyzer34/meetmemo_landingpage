@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import ItWork from '../Work/Work';
 import { Menu, X } from 'lucide-react';
 import Link from "next/link";
+import Image from "next/image";
 import Pricing from '../Pricing/Pricing';
 
 function Demo() {
@@ -15,7 +16,7 @@ function Demo() {
       <div className="flex items-center justify-center bg-[#F7F9FC] w-full py-6">
         <nav className="flex items-center justify-between px-6 py-3 bg-white rounded-full shadow-md w-full max-w-3xl mx-auto">
           <div className="flex-grow">
-            <img src="/logo_meetmemo.svg" alt="Logo" width={40} height={40} className="w-8 h-8" />
+            <Image src="/logo_meetmemo.svg" alt="Logo" width={40} height={40} className="w-8 h-8" />
           </div>
 
           {/* Desktop Menu */}
@@ -51,12 +52,12 @@ function Demo() {
       <div className="bg-[#F7F9FC] p-6">
         <div className="flex flex-col-reverse sm:flex-row items-center justify-between max-w-6xl mx-auto">
           <div className="flex-1 sm:pr-6 text-center sm:text-left">
-            <img src="/meeticons.svg" alt="meet_icons" className="mx-auto sm:mx-0 w-35 h-35 mb-4" />
+            <Image src="/meeticons.svg" alt="meet_icons" width={140} height={140} className="mx-auto sm:mx-0 w-35 h-35 mb-4" />
             <h1 className="text-2xl sm:text-4xl font-semibold text-[#1F1654] max-w-xl mx-auto sm:mx-0">
               Goodbye to Manual Note Taking, Let AI Take Over
             </h1>
             <p className="mt-4 text-lg text-[#161727] max-w-lg mx-auto sm:mx-0">
-              Transform your team’s meetings with MeetMemo.ai. Get automated notes, AI-generated summaries, seamless task management,
+              Transform your team's meetings with MeetMemo.ai. Get automated notes, AI-generated summaries, seamless task management,
               and a centralized knowledge hub that ensures every conversation drives results.
             </p>
             <div className="mt-6 flex flex-col sm:flex-row gap-4">
@@ -67,7 +68,7 @@ function Demo() {
 
           
           <div className="flex-1 sm:ml-8">
-            <img src="/Demovisual.svg" alt="demo_visual" className="w-full h-auto max-h-64 sm:max-h-[70vh]" />
+            <Image src="/Demovisual.svg" alt="demo_visual" width={600} height={500} className="w-full h-auto max-h-64 sm:max-h-[70vh]" />
           </div>
         </div>
       </div>

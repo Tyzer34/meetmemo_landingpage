@@ -1,5 +1,6 @@
 import React from "react";
 import Spaces from "../Spaces/Spaces";
+import Image from "next/image";
 
 export default function MeetTools() {
   return (
@@ -26,9 +27,11 @@ export default function MeetTools() {
           
           <div className="relative bg-[#E1F5FF] p-4 sm:p-6 rounded-2xl shadow-lg max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg mx-auto flex justify-center items-center">
             <div className="flex justify-center items-center w-full px-6 py-6">
-              <img
+              <Image
                 src="/Group 5.svg"
                 alt="group_5_icons"
+                width={350}
+                height={250}
                 className="w-full max-w-[250px] sm:max-w-[300px] md:max-w-[350px] h-auto"
               />
             </div>

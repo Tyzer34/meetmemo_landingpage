@@ -1,5 +1,6 @@
 import React from "react";
 import MobileMeet from "../MobileMeet/MobileMeet";
+import Image from "next/image";
 
 export default function Spaces() {
   return (
@@ -27,9 +28,11 @@ export default function Spaces() {
                   </div>
                 </div>
                 <div className="flex justify-center md:justify-start lg:justify-center">
-                  <img
+                  <Image
                     src="/4group.svg"
                     alt="4_img"
+                    width={144}
+                    height={144}
                     className="w-20 h-20 sm:w-24 sm:h-24 md:w-24 md:h-24 lg:w-32 lg:h-32 xl:w-36 xl:h-36"
                   />
                 </div>
