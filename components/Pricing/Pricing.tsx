@@ -218,10 +218,10 @@ const PriceCards = ({ selected, onCheckout }: PriceCardProps) => {
             whileHover={{ scale: 1.015 }}
             whileTap={{ scale: 0.985 }}
             onClick={handleDirectDownload}
-            className="box-shadow py-4 text-white px-8 font-medium z-20 uppercase w-full mt-4 flex items-center justify-center gap-2"
+            className="box-shadow py-4 text-white px-8 font-medium z-20 uppercase w-full mt-4 flex items-center justify-center gap-2 bg-[#7054F0] rounded-full"
           >
             <Download className="w-5 h-5" />
-            Download Direct
+            Get Started
           </motion.button>
         ) : (
           <motion.button
@@ -229,7 +229,7 @@ const PriceCards = ({ selected, onCheckout }: PriceCardProps) => {
             whileTap={{ scale: 0.985 }}
             onClick={handleBuyClick}
             disabled={isLoading}
-            className="box-shadow py-4 text-white px-8 font-medium z-20 uppercase w-full mt-20 flex items-center justify-center gap-2 disabled:opacity-70"
+            className="box-shadow py-4 text-white px-8 font-medium z-20 uppercase w-full mt-4 flex items-center justify-center gap-2 disabled:opacity-70 bg-[#7054F0] rounded-full"
           >
             {isLoading ? (
               <>
@@ -237,7 +237,7 @@ const PriceCards = ({ selected, onCheckout }: PriceCardProps) => {
                 Processing...
               </>
             ) : (
-              "Try Now!"
+              "Get Started"
             )}
           </motion.button>
         )}
