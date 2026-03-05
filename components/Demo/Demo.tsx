@@ -5,6 +5,7 @@ import ItWork from '../Work/Work';
 import { Menu, X } from 'lucide-react';
 import Link from "next/link";
 import Pricing from '../Pricing/Pricing';
+import WaitlistForm from '../Waitlist/waitlist-form';
 
 function Demo() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -64,6 +65,11 @@ function Demo() {
                 <button className="bg-[#7054F0] text-white py-2 px-6 rounded-full">Get Started Free</button>
               </Link>
               <button className="border-2 border-[#EBE6FF] text-[#7054F0] py-2 px-6 rounded-full">Learn More</button>
+            </div>
+            
+            {/* Email Capture - Waitlist Form */}
+            <div className="mt-8">
+              <WaitlistForm />
             </div>
           </div>
 
