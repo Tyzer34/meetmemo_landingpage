@@ -4,6 +4,30 @@ import { AnimatePresence, motion } from "framer-motion";
 import StrikethroughAnimation from "./StrikeAnimation";
 import OvalAnimation from "./OvalAnimation";
 import Link from "next/link";
+import { Download, Loader2 } from "lucide-react";
+
+// Direct download fallback URL - replace with actual app download link when available
+const DIRECT_DOWNLOAD_URL = "https://github.com/Tyzer34/meetmemo/releases/latest";
+
+interface CheckoutResult {
+  success: boolean;
+  downloadUrl?: string;
+  error?: string;
+}
+
+// Simulated checkout function - replace with actual Stripe/payment integration
+async function initiateCheckout(planType: "M" | "A"): Promise<CheckoutResult> {
+  // Simulate network delay for checkout initiation
+  await new Promise((resolve) => setTimeout(resolve, 1500));
+  
+  // In production, integrate with Stripe, Paddle, or similar
+  // For now, simulate a fallback scenario
+  return {
+    success: false,
+    downloadUrl: DIRECT_DOWNLOAD_URL,
+    error: "Payment system not configured. Using direct download fallback.",
+  };
+}
 
 export default function Pricing() {
   const [selected, setSelected] = useState<"M" | "A">("M");
@@ -11,7 +35,7 @@ export default function Pricing() {
   return (
     <section className="w-full text-black bg-white px-4 lg:px-8 py-12 lg:pb-24 relative overflow-hidden">
       <Heading selected={selected} setSelected={setSelected} />
-      <PriceCards selected={selected} />
+      <PriceCards selected={selected} onCheckout={initiateCheckout} />
       <TopLeftCircle />
       <BottomRightCircle />
     </section>
@@ -105,58 +129,121 @@ const CTAArrow = () => (
 
 interface PriceCardProps {
   selected: "M" | "A";
+  onCheckout: (planType: "M" | "A") => Promise<CheckoutResult>;
 }
 
-const PriceCards = ({ selected }: PriceCardProps) => (
-  <div className="flex flex-col lg:flex-row gap-8 lg:gap-4 w-full max-w-6xl mx-auto relative z-10">
-    {/* PRO  */}
-    <div className="w-full bg-white p-6 border-[1px] border-slate-300 rounded-xl">
-      <div className="flex flex-col justify-center items-center">
-        <p className="text-2xl font-bold mb-2">Business</p>
-        {/* <p className="text-lg mb-6">Everything to launch</p> */}
+const PriceCards = ({ selected, onCheckout }: PriceCardProps) => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [checkoutError, setCheckoutError] = useState<string | null>(null);
+  const [fallbackUrl, setFallbackUrl] = useState<string | null>(null);
+
+  const handleBuyClick = async () => {
+    setIsLoading(true);
+    setCheckoutError(null);
+    setFallbackUrl(null);
+
+    try {
+      const result = await onCheckout(selected);
+      
+      if (result.success) {
+        // Payment initiated successfully - redirect to checkout
+        window.location.href = result.downloadUrl!;
+      } else {
+        // Payment failed - show fallback
+        setCheckoutError(result.error || "Payment unavailable");
+        setFallbackUrl(result.downloadUrl || DIRECT_DOWNLOAD_URL);
+      }
+    } catch (error) {
+      // Network or other error - fall back to direct download
+      setCheckoutError("Connection error. Using direct download fallback.");
+      setFallbackUrl(DIRECT_DOWNLOAD_URL);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleDirectDownload = () => {
+    window.open(fallbackUrl || DIRECT_DOWNLOAD_URL, "_blank");
+  };
+
+  return (
+    <div className="flex flex-col lg:flex-row gap-8 lg:gap-4 w-full max-w-6xl mx-auto relative z-10">
+      {/* PRO  */}
+      <div className="w-full bg-white p-6 border-[1px] border-slate-300 rounded-xl">
+        <div className="flex flex-col justify-center items-center">
+          <p className="text-2xl font-bold mb-2">Business</p>
+          {/* <p className="text-lg mb-6">Everything to launch</p> */}
+        </div>
+        <div className="overflow-hidden mb-1">
+          <AnimatePresence mode="wait">
+            {selected === "M" ? (
+              // Parent Container with Flex for Horizontal Alignment
+              <div className="flex flex-col items-center text-6xl font-bold text-indigo-500">
+                <div className="flex relative mx-2 items-center">
+                  <span className="text-4xl text-black">$12</span>
+                  <StrikethroughAnimation />
+                </div>
+
+                <div className="flex items-center">
+                  <OvalAnimation textData="Free" />
+                  <div></div>
+                </div>
+              </div>
+            ) : (
+              // Parent Container with Flex for Horizontal Alignment
+              <div className="flex flex-col  items-center text-6xl font-bold text-indigo-500">
+                <div className="flex  relative mx-2 items-center">
+                  <span className="text-4xl text-black">$120</span>
+                  <StrikethroughAnimation />
+                </div>
+
+                <div className="flex items-center">
+                  <OvalAnimation textData="Free" />
+                  <div></div>
+                </div>
+              </div>
+            )}
+          </AnimatePresence>
+        </div>
+
+        {/* Error/Fallback Message */}
+        {checkoutError && (
+          <div className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-lg text-sm text-amber-800">
+            {checkoutError}
+          </div>
+        )}
+
+        {fallbackUrl ? (
+          <motion.button
+            whileHover={{ scale: 1.015 }}
+            whileTap={{ scale: 0.985 }}
+            onClick={handleDirectDownload}
+            className="box-shadow py-4 text-white px-8 font-medium z-20 uppercase w-full mt-4 flex items-center justify-center gap-2"
+          >
+            <Download className="w-5 h-5" />
+            Download Direct
+          </motion.button>
+        ) : (
+          <motion.button
+            whileHover={{ scale: 1.015 }}
+            whileTap={{ scale: 0.985 }}
+            onClick={handleBuyClick}
+            disabled={isLoading}
+            className="box-shadow py-4 text-white px-8 font-medium z-20 uppercase w-full mt-20 flex items-center justify-center gap-2 disabled:opacity-70"
+          >
+            {isLoading ? (
+              <>
+                <Loader2 className="w-5 h-5 animate-spin" />
+                Processing...
+              </>
+            ) : (
+              "Try Now!"
+            )}
+          </motion.button>
+        )}
       </div>
-      <div className="overflow-hidden mb-1">
-        <AnimatePresence mode="wait">
-          {selected === "M" ? (
-            // Parent Container with Flex for Horizontal Alignment
-            <div className="flex flex-col items-center text-6xl font-bold text-indigo-500">
-              <div className="flex relative mx-2 items-center">
-                <span className="text-4xl text-black">$12</span>
-                <StrikethroughAnimation />
-              </div>
 
-              <div className="flex items-center">
-                <OvalAnimation textData="Free" />
-                <div></div>
-              </div>
-            </div>
-          ) : (
-            // Parent Container with Flex for Horizontal Alignment
-            <div className="flex flex-col  items-center text-6xl font-bold text-indigo-500">
-              <div className="flex  relative mx-2 items-center">
-                <span className="text-4xl text-black">$120</span>
-                <StrikethroughAnimation />
-              </div>
-
-              <div className="flex items-center">
-                <OvalAnimation textData="Free" />
-                <div></div>
-              </div>
-            </div>
-          )}
-        </AnimatePresence>
-      </div>
-
-      <motion.button
-        whileHover={{ scale: 1.015 }}
-        whileTap={{ scale: 0.985 }}
-        className="box-shadow py-4 text-white px-8 font-medium z-20 uppercase w-full mt-20"
-      >
-        Try Now!
-      </motion.button>
-    </div>
-
-    {/* ENTERPRISE */}
+      {/* ENTERPRISE */}
     <div className="w-full bg-white p-6 border-[1px] border-slate-300 rounded-xl">
       <div className="flex flex-col justify-center items-center">
         <p className="text-2xl font-bold mb-2">Enterprise</p>
