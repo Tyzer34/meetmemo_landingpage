@@ -20,15 +20,44 @@ const Footer = () => {
 
             {/* Links Section */}
             <div>
-              <ul className="text-gray-200 text-base flex items-center gap-4 mt-4">
+              <ul className="text-gray-200 text-base flex items-center gap-4 mt-4 flex-wrap justify-center">
                 <li>
-                  <Link href="/terms-of-service">Terms of Service</Link>
+                  <Link href="/" className="hover:text-white transition-colors">Home</Link>
                 </li>
-                |
+                <li className="hidden sm:inline">|</li>
                 <li>
-                  <Link href="/privacy-policy">Privacy Policy</Link>
+                  <Link href="/#pricing" className="hover:text-white transition-colors">Pricing</Link>
+                </li>
+                <li className="hidden sm:inline">|</li>
+                <li>
+                  <Link href="/#compare" className="hover:text-white transition-colors">Compare</Link>
+                </li>
+                <li className="hidden sm:inline">|</li>
+                <li>
+                  <Link href="/terms-of-service" className="hover:text-white transition-colors">Terms of Service</Link>
+                </li>
+                <li className="hidden sm:inline">|</li>
+                <li>
+                  <Link href="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+                </li>
+                <li className="hidden sm:inline">|</li>
+                <li>
+                  <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
                 </li>
               </ul>
+            </div>
+
+            {/* Social Links */}
+            <div className="flex items-center gap-6 mt-6">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-200 hover:text-white transition-colors">
+                Twitter
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-200 hover:text-white transition-colors">
+                LinkedIn
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-200 hover:text-white transition-colors">
+                GitHub
+              </a>
             </div>
           </div>
         </div>

@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const navLinks = ["Use Cases", "Pricing", "About Us"];
+  const navLinks = ["Use Cases", "Pricing", "Compare", "About Us"];
 
   return (
     <div className="relative max-w-4xl w-full md:mx-auto p-2 md:p-5">
