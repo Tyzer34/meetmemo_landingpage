@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import MeetTools from "../MeetTools/MeetTools";
 
 export default function Productivity() {
@@ -53,9 +54,11 @@ export default function Productivity() {
             <p className="text-sm sm:text-lg md:text-xl text-[#161727] mb-6">
               Say goodbye to manual note-taking and let automation do the work. With AI-powered meeting notes, you'll capture every detail effortlessly—accurate, organized, and delivered instantly. Focus on the conversation, while MeetMemo.ai handles the notes.
             </p>
-            <button className="px-5 sm:px-6 md:px-6 py-2 bg-[#7054F0] text-white font-semibold rounded-full shadow-md hover:bg-[#5a3bcf]">
-              Signup
-            </button>
+            <Link href="/schedule-demo">
+              <button className="px-5 sm:px-6 md:px-6 py-2 bg-[#7054F0] text-white font-semibold rounded-full shadow-md hover:bg-[#5a3bcf]">
+                Get Started Free
+              </button>
+            </Link>
           </div>
         </div>
       </div>

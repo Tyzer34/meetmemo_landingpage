@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Productivity from "../Productivity/Productivity";
 
 export default function MeetingAutomationSection() {
@@ -25,9 +26,11 @@ export default function MeetingAutomationSection() {
               you'll capture every detail effortlessly—accurate, organized, and
               delivered instantly.
             </p>
-            <button className="px-5 py-2 bg-[#7054F0] text-white font-semibold rounded-full shadow-md hover:bg-[#5A3FCF]">
-              Signup
-            </button>
+            <Link href="/schedule-demo">
+              <button className="px-5 py-2 bg-[#7054F0] text-white font-semibold rounded-full shadow-md hover:bg-[#5A3FCF]">
+                Get Started Free
+              </button>
+            </Link>
           </div>
 
           

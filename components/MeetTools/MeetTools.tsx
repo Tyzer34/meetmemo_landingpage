@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import Spaces from "../Spaces/Spaces";
 
 export default function MeetTools() {
@@ -18,9 +19,11 @@ export default function MeetTools() {
               Say goodbye to manual note-taking and let automation do the work. With AI-powered meeting notes, you'll capture every detail effortlessly—accurate, organized, and delivered instantly. Focus on the conversation, while MeetMemo.ai handles the notes.
             </p>
 
-            <button className="px-6 py-2 bg-[#7054F0] text-white font-semibold rounded-full shadow-md hover:bg-[#5a3ed9] transition-all">
-              Signup
-            </button>
+            <Link href="/schedule-demo">
+              <button className="px-6 py-2 bg-[#7054F0] text-white font-semibold rounded-full shadow-md hover:bg-[#5a3ed9] transition-all">
+                Get Started Free
+              </button>
+            </Link>
           </div>
 
           
