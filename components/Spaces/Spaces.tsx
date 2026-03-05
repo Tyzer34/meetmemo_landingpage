@@ -50,7 +50,7 @@ export default function Spaces() {
             </p>
 
             <button className="px-5 sm:px-6 py-2 bg-[#7054F0] text-white font-semibold rounded-full shadow-md hover:bg-[#5a3bcf]">
-              Signup
+              Get Started
             </button>
           </div>
         </div>

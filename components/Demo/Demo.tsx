@@ -60,7 +60,7 @@ function Demo() {
               and a centralized knowledge hub that ensures every conversation drives results.
             </p>
             <div className="mt-6 flex flex-col sm:flex-row gap-4">
-              <button className="bg-[#7054F0] text-white py-2 px-6 rounded-full">Signup</button>
+              <button className="bg-[#7054F0] text-white py-2 px-6 rounded-full">Get Started</button>
               <button className="border-2 border-[#EBE6FF] text-[#7054F0] py-2 px-6 rounded-full">Learn More</button>
             </div>
           </div>
