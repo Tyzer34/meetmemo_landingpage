@@ -57,8 +57,8 @@ export default function PricingPlans() {
                   <span className="font-bold">{plan.price}</span>
                   <span className="font-normal">{plan.priceDetail}</span>
                 </p>
-                <button className="mt-4 bg-[#7054F0] text-[#FFFFFF] px-6 py-2 rounded-full font-medium ">
-                  Get Started
+                <button className="mt-4 bg-[#7054F0] text-white px-6 py-3 rounded-full font-medium w-full">
+                  Get Started Free
                 </button>
                 <hr className="my-4 border-[#D1D1F7]" />
                 <h4 className="text-lg text-[#2B1C50] py-2">Key Features</h4>

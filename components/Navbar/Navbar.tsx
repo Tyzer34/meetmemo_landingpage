@@ -71,13 +71,11 @@ const DemoButton = ({ navMenu }: { navMenu: boolean }) => (
     whileHover={{ scale: 1.05 }}
     whileTap={{ scale: 0.95 }}
     className={cn(
-      "rounded-full px-4 py-2 font-medium whitespace-nowrap",
-      navMenu
-        ? "bg-gradient-to-br from-m_purple_500 to-m_lilac_400 text-white"
-        : "bg-transparent text-white border"
+      "rounded-full px-6 py-3 font-medium whitespace-nowrap bg-[#7054F0] text-white",
+      navMenu && "w-full"
     )}
   >
-    <Link href="/schedule-demo">Schedule a Demo</Link>
+    <Link href="/schedule-demo">Get Started Free</Link>
   </motion.button>
 );
 

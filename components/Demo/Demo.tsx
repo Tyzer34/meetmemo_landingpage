@@ -24,7 +24,7 @@ function Demo() {
             <Link href=''><li className="cursor-pointer hover:text-[#7054F0]">Use Cases</li></Link>
             <Link href='#pricing'><li className="cursor-pointer hover:text-[#7054F0]">Pricing</li></Link>
             <Link href=''><li className="cursor-pointer hover:text-[#7054F0]">About</li></Link>
-            <Link href='#demo'><li className="cursor-pointer hover:text-[#7054F0]">Schedule a Demo</li></Link>
+            <Link href='#demo'><li className="cursor-pointer hover:text-[#7054F0]">Get Started Free</li></Link>
           </ul>
 
           {/* Mobile Menu Button */}
@@ -43,7 +43,7 @@ function Demo() {
             <li><a href="" className="block">Use Cases</a></li>
             <li><a href="#pricing" className="block">Pricing</a></li>
             <li><a href="" className="block">About</a></li>
-            <li><a href="#demo" className="block">Schedule a Demo</a></li>
+            <li><a href="#demo" className="block">Get Started Free</a></li>
           </ul>
         </div>
       )}

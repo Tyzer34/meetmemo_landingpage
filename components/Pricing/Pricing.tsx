@@ -221,7 +221,7 @@ const PriceCards = ({ selected, onCheckout }: PriceCardProps) => {
             className="box-shadow py-4 text-white px-8 font-medium z-20 uppercase w-full mt-4 flex items-center justify-center gap-2 bg-[#7054F0] rounded-full"
           >
             <Download className="w-5 h-5" />
-            Get Started
+            Get Started Free
           </motion.button>
         ) : (
           <motion.button
@@ -237,7 +237,7 @@ const PriceCards = ({ selected, onCheckout }: PriceCardProps) => {
                 Processing...
               </>
             ) : (
-              "Get Started"
+              "Get Started Free"
             )}
           </motion.button>
         )}
@@ -265,7 +265,7 @@ const PriceCards = ({ selected, onCheckout }: PriceCardProps) => {
         className="w-full py-4 mt-12 font-semibold bg-black text-white rounded-lg uppercase"
       >
         <Link href="/schedule-demo" className="inline-block size-full">
-          Schedule a Demo
+          Get Started Free
         </Link>
       </motion.button>
     </div>
