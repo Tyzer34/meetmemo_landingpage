@@ -79,8 +79,8 @@ const Cta = () => {
           </div> */}
           <div className="z-10">
             <Link href="/schedule-demo">
-              <button className="box-shadow py-4 text-white px-8 font-medium z-20">
-                Book a call
+              <button className="box-shadow py-4 text-white px-8 font-medium z-20 bg-[#7054F0] rounded-full">
+                Get Started Free
               </button>
             </Link>
           </div>

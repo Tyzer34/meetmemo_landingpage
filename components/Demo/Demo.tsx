@@ -5,6 +5,7 @@ import ItWork from '../Work/Work';
 import { Menu, X } from 'lucide-react';
 import Link from "next/link";
 import Pricing from '../Pricing/Pricing';
+import WaitlistForm from '../Waitlist/waitlist-form';
 
 function Demo() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -60,14 +61,45 @@ function Demo() {
               and a centralized knowledge hub that ensures every conversation drives results.
             </p>
             <div className="mt-6 flex flex-col sm:flex-row gap-4">
-              <button className="bg-[#7054F0] text-white py-2 px-6 rounded-full">Signup</button>
+              <Link href="/schedule-demo">
+                <button className="bg-[#7054F0] text-white py-2 px-6 rounded-full">Get Started Free</button>
+              </Link>
               <button className="border-2 border-[#EBE6FF] text-[#7054F0] py-2 px-6 rounded-full">Learn More</button>
+            </div>
+            
+            {/* Email Capture - Waitlist Form */}
+            <div className="mt-8">
+              <WaitlistForm />
             </div>
           </div>
 
           
           <div className="flex-1 sm:ml-8">
             <img src="/Demovisual.svg" alt="demo_visual" className="w-full h-auto max-h-64 sm:max-h-[70vh]" />
+          </div>
+        </div>
+      </div>
+
+      {/* Social Proof Metrics */}
+      <div className="bg-white py-12 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="flex flex-col items-center">
+              <span className="text-4xl md:text-5xl font-bold text-[#7054F0]">10,000+</span>
+              <span className="mt-2 text-[#161727] font-medium">Active Users</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="text-4xl md:text-5xl font-bold text-[#7054F0]">500,000+</span>
+              <span className="mt-2 text-[#161727] font-medium">Meetings Transcribed</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="text-4xl md:text-5xl font-bold text-[#7054F0]">2,500+</span>
+              <span className="mt-2 text-[#161727] font-medium">Teams Using Us</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="text-4xl md:text-5xl font-bold text-[#7054F0]">4.9/5</span>
+              <span className="mt-2 text-[#161727] font-medium">Customer Rating</span>
+            </div>
           </div>
         </div>
       </div>

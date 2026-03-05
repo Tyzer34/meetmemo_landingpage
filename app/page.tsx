@@ -6,7 +6,7 @@ import Pricing from "@/components/Pricing/Pricing";
 import ResponsiveContainer from "@/components/ResponsiveContainer/ResponsiveContainer";
 import Scroll from "@/components/Scroll/Scroll";
 import Iphone15Pro from "@/components/ui/iphone-15-pro";
-import "./styles.css";
+// import "./styles.css"; // Removed - unused legacy CSS from design export
 import ScheduleDemo from "@/components/ScheduleDemoForm/ScheduleDemoForm";
 import Demo from "@/components/Demo/Demo";
 
