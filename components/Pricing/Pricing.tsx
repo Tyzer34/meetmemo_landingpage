@@ -6,8 +6,8 @@ import OvalAnimation from "./OvalAnimation";
 import Link from "next/link";
 import { Download, Loader2 } from "lucide-react";
 
-// Direct download fallback URL - replace with actual app download link when available
-const DIRECT_DOWNLOAD_URL = "https://github.com/Tyzer34/meetmemo/releases/latest";
+// Direct download fallback URL - points to GitHub releases page
+const DIRECT_DOWNLOAD_URL = "https://github.com/Tyzer34/meetmemo_landingpage/releases";
 
 interface CheckoutResult {
   success: boolean;
@@ -16,16 +16,14 @@ interface CheckoutResult {
 }
 
 // Simulated checkout function - replace with actual Stripe/payment integration
+// Currently returns fallback directly since payment system isn't configured
 async function initiateCheckout(planType: "M" | "A"): Promise<CheckoutResult> {
-  // Simulate network delay for checkout initiation
-  await new Promise((resolve) => setTimeout(resolve, 1500));
-  
-  // In production, integrate with Stripe, Paddle, or similar
-  // For now, simulate a fallback scenario
+  // Skip delay and return direct download fallback since payment isn't configured
+  // In production, this would integrate with Stripe, Paddle, or similar
   return {
     success: false,
     downloadUrl: DIRECT_DOWNLOAD_URL,
-    error: "Payment system not configured. Using direct download fallback.",
+    error: "Direct download - payment system coming soon",
   };
 }
 
@@ -206,9 +204,9 @@ const PriceCards = ({ selected, onCheckout }: PriceCardProps) => {
           </AnimatePresence>
         </div>
 
-        {/* Error/Fallback Message */}
+        {/* Fallback Message */}
         {checkoutError && (
-          <div className="mt-4 p-3 bg-amber-50 border border-amber-200 rounded-lg text-sm text-amber-800">
+          <div className="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg text-sm text-blue-800">
             {checkoutError}
           </div>
         )}
