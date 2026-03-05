@@ -80,6 +80,30 @@ function Demo() {
         </div>
       </div>
 
+      {/* Social Proof Metrics */}
+      <div className="bg-white py-12 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div className="flex flex-col items-center">
+              <span className="text-4xl md:text-5xl font-bold text-[#7054F0]">10,000+</span>
+              <span className="mt-2 text-[#161727] font-medium">Active Users</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="text-4xl md:text-5xl font-bold text-[#7054F0]">500,000+</span>
+              <span className="mt-2 text-[#161727] font-medium">Meetings Transcribed</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="text-4xl md:text-5xl font-bold text-[#7054F0]">2,500+</span>
+              <span className="mt-2 text-[#161727] font-medium">Teams Using Us</span>
+            </div>
+            <div className="flex flex-col items-center">
+              <span className="text-4xl md:text-5xl font-bold text-[#7054F0]">4.9/5</span>
+              <span className="mt-2 text-[#161727] font-medium">Customer Rating</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <ItWork />
     </div>
   );
