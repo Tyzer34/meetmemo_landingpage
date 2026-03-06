@@ -151,6 +151,15 @@ const PriceCards = ({ selected }: PriceCardProps) => (
         whileHover={{ scale: 1.015 }}
         whileTap={{ scale: 0.985 }}
         className="box-shadow py-4 text-white px-8 font-medium z-20 uppercase w-full mt-20"
+        onClick={() => {
+          const checkoutUrl = process.env.NEXT_PUBLIC_CHECKOUT_URL;
+          if (checkoutUrl) {
+            window.open(checkoutUrl, "_blank");
+          } else {
+            // Fallback: open schedule demo or show alert
+            window.location.href = "/schedule-demo";
+          }
+        }}
       >
         Try Now!
       </motion.button>
