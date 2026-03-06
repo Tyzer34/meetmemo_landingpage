@@ -48,6 +48,7 @@ const formSchema = z.object({
   employeeCount: z.string({
     required_error: "Please select number of employees",
   }),
+  captcha: z.string().min(1, "Please complete the CAPTCHA"),
 });
 
 export default function ScheduleDemo() {
