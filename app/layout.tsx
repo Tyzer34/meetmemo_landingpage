@@ -67,6 +67,14 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
     countryName: "Belgium",
+    images: [
+      {
+        url: "https://meetmemo.ai/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "MeetMemo.ai - Your Meeting Assistant"
+      }
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -74,6 +82,7 @@ export const metadata: Metadata = {
     description:
       "MeetMemo.ai helps you manage and get insights from your meetings with AI-powered tools.",
     creator: "@meetmemo",
+    images: ["https://meetmemo.ai/og-image.png"],
   },
   alternates: {
     canonical: "https://meetmemo.ai",
