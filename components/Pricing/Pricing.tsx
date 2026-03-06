@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import StrikethroughAnimation from "./StrikeAnimation";
 import OvalAnimation from "./OvalAnimation";
 import Link from "next/link";
+import { PRICING } from "@/lib/constants";
 
 export default function Pricing() {
   const [selected, setSelected] = useState<"M" | "A">("M");
@@ -98,7 +99,7 @@ const CTAArrow = () => (
       />
     </motion.svg>
     <span className="block text-sm w-fit bg-indigo-500 text-white shadow px-2.5 py-1.5 rounded -mt-1 ml-8 -rotate-2 font-light italic">
-      Save 12$
+      Save {PRICING.currency}{PRICING.pro.monthly * 12 - PRICING.pro.yearly}
     </span>
   </div>
 );
@@ -121,7 +122,7 @@ const PriceCards = ({ selected }: PriceCardProps) => (
             // Parent Container with Flex for Horizontal Alignment
             <div className="flex flex-col items-center text-6xl font-bold text-indigo-500">
               <div className="flex relative mx-2 items-center">
-                <span className="text-4xl text-black">$12</span>
+                <span className="text-4xl text-black">{PRICING.currency}{PRICING.pro.monthly}</span>
                 <StrikethroughAnimation />
               </div>
 
@@ -134,7 +135,7 @@ const PriceCards = ({ selected }: PriceCardProps) => (
             // Parent Container with Flex for Horizontal Alignment
             <div className="flex flex-col  items-center text-6xl font-bold text-indigo-500">
               <div className="flex  relative mx-2 items-center">
-                <span className="text-4xl text-black">$120</span>
+                <span className="text-4xl text-black">{PRICING.currency}{PRICING.pro.yearly}</span>
                 <StrikethroughAnimation />
               </div>
 
