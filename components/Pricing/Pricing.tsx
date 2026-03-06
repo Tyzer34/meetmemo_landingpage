@@ -113,7 +113,7 @@ const PriceCards = ({ selected }: PriceCardProps) => (
     <div className="w-full bg-white p-6 border-[1px] border-slate-300 rounded-xl">
       <div className="flex flex-col justify-center items-center">
         <p className="text-2xl font-bold mb-2">Business</p>
-        {/* <p className="text-lg mb-6">Everything to launch</p> */}
+        <p className="text-sm text-slate-500 mb-4">Min. 5 users</p>
       </div>
       <div className="overflow-hidden mb-1">
         <AnimatePresence mode="wait">
@@ -124,6 +124,7 @@ const PriceCards = ({ selected }: PriceCardProps) => (
                 <span className="text-4xl text-black">$12</span>
                 <StrikethroughAnimation />
               </div>
+              <span className="text-sm text-slate-500">per user / month</span>
 
               <div className="flex items-center">
                 <OvalAnimation textData="Free" />
@@ -146,6 +147,9 @@ const PriceCards = ({ selected }: PriceCardProps) => (
           )}
         </AnimatePresence>
       </div>
+      <p className="text-xs text-slate-400 text-center mt-2">
+        10+ users: contact us for custom pricing
+      </p>
 
       <motion.button
         whileHover={{ scale: 1.015 }}
