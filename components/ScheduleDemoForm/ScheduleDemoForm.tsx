@@ -3,9 +3,10 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
-import { CalendarIcon, Clock } from "lucide-react";
+import { CalendarIcon } from "lucide-react";
 import { format } from "date-fns";
 
+import FormCaptcha from "@/components/FormCaptcha/FormCaptcha";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import {
@@ -48,6 +49,9 @@ const formSchema = z.object({
   employeeCount: z.string({
     required_error: "Please select number of employees",
   }),
+  captchaToken: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY
+    ? z.string().min(1, "Please complete the CAPTCHA")
+    : z.string().optional(),
 });
 
 export default function ScheduleDemo() {
@@ -62,6 +66,7 @@ export default function ScheduleDemo() {
       source: "",
       companyName: "",
       employeeCount: "",
+      captchaToken: "",
     },
   });
 
@@ -261,6 +266,22 @@ export default function ScheduleDemo() {
               )}
             />
           </div>
+
+          <FormField
+            control={form.control}
+            name="captchaToken"
+            render={() => (
+              <FormItem>
+                <FormControl>
+                  <FormCaptcha
+                    onVerify={(token) => form.setValue("captchaToken", token)}
+                    onExpire={() => form.setValue("captchaToken", "")}
+                  />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
           <Button
             type="submit"
