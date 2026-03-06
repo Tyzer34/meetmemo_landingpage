@@ -1,6 +1,6 @@
 {
   "name": "my-landing-page",
-  "version": "0.1.0",
+  "version": "2.3.1",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -48,6 +48,6 @@
     "typescript": "^5"
   },
   "engines": {
-  "node": "20.x"
-}
+    "node": "20.x"
+  }
 }
