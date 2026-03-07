@@ -1,4 +1,5 @@
 import ScheduleDemoContact from "../ScheduleDemoContact/ScheduleDemoContact";
+import { PRICING } from "@/lib/constants";
 
 export default function PricingPlans() {
     const plans = [
@@ -15,7 +16,7 @@ export default function PricingPlans() {
       },
       {
         title: "Pro",
-        price: "$10",
+        price: `${PRICING.currency}${PRICING.pro.monthly}`,
         priceDetail: " per month",
         features: [
           "Lorem ipsum dolor sit amet",
@@ -27,7 +28,7 @@ export default function PricingPlans() {
       },
       {
         title: "Enterprise",
-        price: "$20",
+        price: `${PRICING.currency}${PRICING.enterprise.monthly}`,
         priceDetail: " per month",
         features: [
           "Lorem ipsum dolor sit amet",
