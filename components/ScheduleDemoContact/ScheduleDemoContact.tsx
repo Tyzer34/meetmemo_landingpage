@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 
+import FormCaptcha from "@/components/FormCaptcha/FormCaptcha";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -28,6 +29,9 @@ const formSchema = z.object({
   email: z.string().email({
     message: "Please enter a valid email address.",
   }),
+  captchaToken: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY
+    ? z.string().min(1, "Please complete the CAPTCHA")
+    : z.string().optional(),
 });
 
 export default function ScheduleDemoContact() {
@@ -38,6 +42,7 @@ export default function ScheduleDemoContact() {
       lastName: "",
       phoneNumber: "",
       email: "",
+      captchaToken: "",
     },
   });
 
@@ -55,6 +60,7 @@ export default function ScheduleDemoContact() {
             last_name: values.lastName,
             phone_number: values.phoneNumber,
             user_email: values.email,
+            captcha_token: values.captchaToken,
           }),
         }
       );
@@ -150,6 +156,23 @@ export default function ScheduleDemoContact() {
                 )}
               />
             </div>
+            <FormField
+              control={form.control}
+              name="captchaToken"
+              render={() => (
+                <FormItem>
+                  <FormControl>
+                    <FormCaptcha
+                      onVerify={(token) =>
+                        form.setValue("captchaToken", token)
+                      }
+                      onExpire={() => form.setValue("captchaToken", "")}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
             <div className="flex justify-between">
               <Button
                 type="button"
